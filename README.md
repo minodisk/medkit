@@ -12,8 +12,23 @@ some tags permitted by Medium.
 
 I think Medium's editor is an elegant WYSIWYG editor. But, I would like to write
 technical posts in another editor and manage version of the posts in Git etc.
-When trying to do it, it can not be realized with the Medium's official API.
-Because it only supports create, it does not support read, update and destroy.
+When trying to do it, it can not be realized with the
+[Medium's official API](https://github.com/Medium/medium-api-docs). Because it
+only supports create, it does not support read, update and destroy.
+
+## Installation
+
+npm:
+
+```sh
+npm install --save @minodisk/medic
+```
+
+yarn:
+
+```sh
+yarn add @minodisk/medic
+```
 
 ## Usage
 
@@ -23,20 +38,20 @@ import {
   createPost,
   readPost,
   updatePost,
-  destroyPost,
-} from '@minodisk/medic';
+  destroyPost
+} from "@minodisk/medic";
 
 (async () => {
   const client = await createClient();
   const postId = await createPost(
     client,
-    '<h3>Title</h3><h4>Subtitle</h4><p>Text</p>',
+    "<h3>Title</h3><h4>Subtitle</h4><p>Text</p>"
   );
   const html = await readPost(client, postId); // -> '<h3>Title</h3><h4>Subtitle</h4><p>Text</p>'
   await updatePost(
     client,
     postId,
-    '<h3>Title</h3><h4>Subtitle</h4><p>Modified</p>',
+    "<h3>Title</h3><h4>Subtitle</h4><p>Modified</p>"
   );
   await destroyPost(client, postId);
 })();
@@ -77,10 +92,11 @@ a `Promise`.
 
 ### How is it realized?
 
-Using with Chromium via puppeteer and operate Medium's page and sometime
-evaluate JavaScript inside the page.
+Using with Chromium via
+[GoogleChrome/puppeteer](https://github.com/GoogleChrome/puppeteer) and operate
+Medium's page and sometime evaluate JavaScript inside the page.
 
-### Why doesn't run with headless mode.
+### Why doesn't run with headless mode?
 
 When trying to operate Medium's post edit page in headless mode, some operations
 such as paste and selection are not executed properly.
