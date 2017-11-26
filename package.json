@@ -1,6 +1,6 @@
 {
-  "name": "@minodisk/medic",
-  "version": "0.0.1",
+  "name": "@minodisk/medkit",
+  "version": "0.0.0",
   "description": "Medium SDK supports CRUD post(s) for Node",
   "license": "MIT",
   "main": "lib/index.js",

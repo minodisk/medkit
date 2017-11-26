@@ -1,4 +1,4 @@
-# @minodisk/medic
+# @minodisk/medkit
 
 Medium SDK supports CRUD post(s) for Node.
 
@@ -21,13 +21,13 @@ only supports create, it does not support read, update and destroy.
 npm:
 
 ```sh
-npm install --save @minodisk/medic
+npm install --save @minodisk/medkit
 ```
 
 yarn:
 
 ```sh
-yarn add @minodisk/medic
+yarn add @minodisk/medkit
 ```
 
 ## Usage
@@ -39,7 +39,7 @@ import {
   readPost,
   updatePost,
   destroyPost
-} from "@minodisk/medic";
+} from "@minodisk/medkit";
 
 (async () => {
   const client = await createClient();
