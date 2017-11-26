@@ -1,0 +1,25 @@
+{
+  "name": "@minodisk/medic",
+  "description": "Medium SDK supports CRUD post(s) for Node",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "yarn run babel -d lib/ src/",
+    "test": "yarn run jest",
+    "format": "yarn run prettier *.json *.md src/*.js lib/*.js -- --write",
+    "prepublish": "yarn run build && yarn run format",
+    "start": "node lib/index.js"
+  },
+  "dependencies": {
+    "puppeteer": "^0.13.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
+    "cheerio": "^1.0.0-rc.2",
+    "flow-bin": "^0.59.0",
+    "jest": "^21.2.1",
+    "prettier": "^1.8.2"
+  }
+}
